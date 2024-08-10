@@ -1,0 +1,13 @@
+.carta-titulo{
+    padding: 0 !important;
+    margin: 0 !important;
+    
+}
+
+.card-description{
+    margin:4px;
+    margin-bottom: 16px;
+}
+.carta{
+    background-color: #cae34b !important;
+}
