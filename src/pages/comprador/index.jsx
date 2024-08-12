@@ -1,42 +1,42 @@
+import React from "react";
 import Layout from "../../components/layout";
 import Card from "../../components/card";
+import useProductos from "../conector/comprador/mainHook"; // Usa un custom hook para obtener productos
 import './style.css';
 
-
 const Comprador = () => {
+    
+    const { productos, loading, error } = useProductos(); // Usa el custom hook
+
+    if (loading) return <div>Cargando...</div>;
+    if (error) return <div>Error al obtener productos: {error.message}</div>;
+
+    const cards = [];
+    for (let i = 0; i < productos.length; i++) {
+        const producto = productos[i];
+        cards.push(
+            <Card 
+                key={i}
+                titulo={producto.nombreProducto}
+                categoria={producto.clasificacion}
+                precio={producto.precio}
+                unidad={producto.unidComercializacion}
+                vendedor={producto.localizacion}
+                descripcion={producto.descripcion}
+                imagen={producto.imagenUrl}
+            />
+        );
+    }
+
     return (
-      <Layout>
-        <div className="publicacion__container">
-          <Card 
-            titulo="Mazorca Fresca"
-            categoria="Granos y Cereales"
-            precio="1.500"
-            unidad="kg"
-            vendedor="Finca El Progreso"
-            descripcion="Mazorca de alta calidad, cultivada de manera orgánica. Ideal para consumo directo o elaboración de productos derivados."
-            imagen="mazorca-mercado.jpg"
-          />
-                    <Card 
-            titulo="Mazorca Fresca"
-            categoria="Granos y Cereales"
-            precio="1.500"
-            unidad="kg"
-            vendedor="Finca El Progreso"
-            descripcion="Mazorca de alta calidad, cultivada de manera orgánica. Ideal para consumo directo o elaboración de productos derivados."
-            imagen="mazorca-mercado.jpg"
-          />
-                    <Card 
-            titulo="Mazorca Fresca"
-            categoria="Granos y Cereales"
-            precio="1.500"
-            unidad="kg"
-            vendedor="Finca El Progreso"
-            descripcion="Mazorca de alta calidad, cultivada de manera orgánica. Ideal para consumo directo o elaboración de productos derivados."
-            imagen="mazorca-mercado.jpg"
-          />
-        </div>
-      </Layout>
-    )
+        <Layout>
+            <div className="publicacion__container">
+                {cards}
+            </div>
+        </Layout>
+    );
 }
 
 export default Comprador;
+
+
