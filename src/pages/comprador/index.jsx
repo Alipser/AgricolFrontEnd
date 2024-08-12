@@ -5,7 +5,7 @@ import useProductos from "../conector/comprador/mainHook"; // Usa un custom hook
 import './style.css';
 
 const Comprador = () => {
-    
+    debugger
     const { productos, loading, error } = useProductos(); // Usa el custom hook
 
     if (loading) return <div>Cargando...</div>;
@@ -20,8 +20,9 @@ const Comprador = () => {
                 titulo={producto.nombreProducto}
                 categoria={producto.clasificacion}
                 precio={producto.precio}
-                unidad={producto.unidComercializacion}
-                vendedor={producto.localizacion}
+                unidad={producto.unid.nombre}
+                ubicacion={producto.localizacion}
+                vendedor={producto.vendedor.nombre + ' ' + producto.vendedor.apellido}
                 descripcion={producto.descripcion}
                 imagen={producto.imagenUrl}
             />

@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const Card = ({ titulo, categoria, precio, unidad, vendedor, descripcion, imagen }) => {
+const Card = ({ titulo, categoria, precio, unidad, ubicacion, vendedor, descripcion, imagen }) => {
 
     return (
         <div className="carta" >
@@ -12,7 +12,8 @@ const Card = ({ titulo, categoria, precio, unidad, vendedor, descripcion, imagen
                 <h4>{titulo}</h4>
                 <p>{categoria}</p>
                 <p>$ {precio} / {unidad}</p>
-                <p>{vendedor}</p>
+                <p>{ubicacion}</p>
+                <p><box-icon name='store' flip='horizontal' ></box-icon>{vendedor}</p>
             </div>
             <div className="carta__descripcion">
                 <p>{descripcion}</p>
