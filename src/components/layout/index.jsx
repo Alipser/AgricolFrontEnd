@@ -1,13 +1,13 @@
 import React from 'react';
-
+import './style.css';
 
 const Layout =({ children }) => {
 
     return (
         <>
-        <main className="d-flex align-items-center ">
+            <main className="layout">
                 {children}
-        </main>
+            </main>
         </>
     )
 

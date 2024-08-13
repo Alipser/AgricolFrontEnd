@@ -6,6 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js";
 import 'boxicons';
 
+//set a default role for the user
+// localStorage.setItem('
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

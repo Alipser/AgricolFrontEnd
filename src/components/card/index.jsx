@@ -1,42 +1,25 @@
-import './style.css';
 import React from 'react';
+import './style.css';
 
-const Card = () => {
-    const ruta = "/assets";
+const Card = ({ titulo, categoria, precio, unidad, ubicacion, vendedor, descripcion, imagen }) => {
 
     return (
-        <div className="card carta" style={{ width: '18rem' }}>
-            <div className="p-2">
-                {/* Descomenta la siguiente línea si necesitas la imagen */}
-                <img style={{ height: '150px' }} src={`${ruta}/logo.png` } className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col">
-                                <h4 className="card-title carta-titulo">Papa</h4>
-                                <span>Categoria</span>
-                            </div>
-                            <div className="col">
-                                <div className="row">
-                                    $423.321.123
-                                </div>
-                                <div className="row">
-                                    kg
-                                </div>
-                                <div className="row">
-                                    Perencejo
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row card-description">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                        </div>
-                        <div className="row d-flex justify-content-center">
-                            {/* Descomenta la siguiente línea si necesitas el botón */}
-                            <a style={{ width: '120px' }} href="#" className="btn btn-light border border-dark">Comprar</a>
-                        </div>
-                    </div>
-                </div>
+        <div className="carta" >
+            <div className="carta__imagen">
+                <img src={`${imagen}`} className="" alt={titulo} />
+            </div>
+            <div className="carta__informacion">
+                <h4>{titulo}</h4>
+                <p>{categoria}</p>
+                <p>$ {precio} / {unidad}</p>
+                <p>{ubicacion}</p>
+                <p><box-icon name='store' flip='horizontal' ></box-icon>{vendedor}</p>
+            </div>
+            <div className="carta__descripcion">
+                <p>{descripcion}</p>
+            </div>
+            <div className="carta__accion">
+                <button>Comprar</button>
             </div>
         </div>
     );

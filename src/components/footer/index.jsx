@@ -22,7 +22,7 @@ const Footer = () => {
                         </div>
                         <div>
                             <a href="" className="text-reset">
-                                <box-icon name='github' type='logo' ></box-icon>
+                                {/* <box-icon name='github' type='logo' ></box-icon> */}
                             </a>
                         </div>
                     </div>
